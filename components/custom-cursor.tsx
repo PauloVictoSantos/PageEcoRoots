@@ -10,8 +10,7 @@ interface CustomCursorProps {
 export function CustomCursor({ isActive }: CustomCursorProps) {
   const cursorRef = useRef<HTMLDivElement>(null)
   const positionRef = useRef({ x: 0, y: 0 })
-  const rafRef = useRef<number>()
-
+  const rafRef = useRef<number | null>(null)
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
       positionRef.current = { x: e.clientX, y: e.clientY }
@@ -22,7 +21,7 @@ export function CustomCursor({ isActive }: CustomCursorProps) {
         if (cursorRef.current) {
           cursorRef.current.style.transform = `translate3d(${positionRef.current.x - 12}px, ${positionRef.current.y - 12}px, 0)`
         }
-        rafRef.current = undefined
+        rafRef.current = null
       })
     }
 
