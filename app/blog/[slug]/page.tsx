@@ -48,7 +48,7 @@ export default async function PostPage({ params }: PageProps) {
         >
           <Link href="/">
             <LuArrowLeft className="mr-2 h-4 w-4" />
-            Voltar ao Blog
+            Voltar ao Inicio
           </Link>
         </Button>
 
