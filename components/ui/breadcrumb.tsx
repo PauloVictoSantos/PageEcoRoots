@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
-import { LuChevronRight as ChevronRight, MoreHorizontal as MoreHorizontal } from 'react-icons/lu'
+import { LuChevronRight as ChevronRight,  } from 'react-icons/lu'
 
 import { cn } from '@/lib/utils'
 
@@ -92,7 +92,7 @@ function BreadcrumbEllipsis({
       className={cn('flex size-9 items-center justify-center', className)}
       {...props}
     >
-      <MoreHorizontal className="size-4" />
+      {/* <MoreHorizontal className="size-4" /> */}
       <span className="sr-only">More</span>
     </span>
   )
