@@ -7,20 +7,9 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
-
-function LeafLogoIcon() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 3C16 3 5 8 5 18C5 23.5 9.5 28 16 28C22.5 28 27 23.5 27 18C27 8 16 3 16 3Z" fill="#1E8449" opacity="0.9"/>
-      <path d="M16 3C16 3 22 10 20 20C18.5 26 16 28 16 28" stroke="#58D68D" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M16 28V14" stroke="#58D68D" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M16 18C16 18 10 15 9 11" stroke="#58D68D" strokeWidth="1" strokeLinecap="round" opacity="0.7"/>
-      <path d="M16 22C16 22 21 19 23 15" stroke="#58D68D" strokeWidth="1" strokeLinecap="round" opacity="0.7"/>
-    </svg>
-  );
-}
 
 type NavbarButtonProps = {
   href?: string;
@@ -250,7 +239,13 @@ export const MobileNavToggle = ({
 export const NavbarLogo = () => (
   <Link href="/" className="flex items-center gap-2.5 mr-5 group relative z-20">
     <motion.div whileHover={{ scale: 1.08, rotate: 5 }} transition={{ type: "spring", stiffness: 400 }}>
-      <LeafLogoIcon />
+      <Image
+        src="/logo.png"
+        alt=""
+        height={50}
+        width={50}
+        className=""
+      />
     </motion.div>
     <span className="font-bold text-sm tracking-tight text-[#58D68D] group-hover:text-[#58D68D] transition-colors">
       Eco<span className="text-white">Roots</span>
