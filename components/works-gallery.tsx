@@ -1,8 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { VideoCard } from "./video-card"
-import { CustomCursor } from "./custom-cursor"
+import { useState } from "react";
+import { VideoCard } from "./video-card";
+import { CustomCursor } from "./custom-cursor";
+import { cldVideo, cldVideoThumb } from "@/lib/cloudinary-client";
 
 const projects = [
   {
@@ -10,45 +11,44 @@ const projects = [
     title: "FASHION STUDIO",
     category: "BRANDING",
     year: "2024",
-    thumbnail: "",
-    video: "",
+    publicId: "IMG_2706_tp5nyp",
   },
   {
     id: 2,
     title: "ARCHITECTURE FIRM",
     category: "DESIGN",
     year: "2024",
-    thumbnail: "",
-    video: "",
+    publicId: "IMG_2708_ykpfrj",
   },
   {
     id: 3,
     title: "PRODUCT LAUNCH",
     category: "CREATIVE",
     year: "2024",
-    thumbnail: "",
-    video: "",
+    publicId: "works/product_launch_def789",
   },
   {
     id: 4,
     title: "STUDIO VALE",
     category: "MARKETING",
     year: "2024",
-    thumbnail: "",
-    video: "",
+    publicId: "works/studio_vale_ghi012",
   },
   {
     id: 5,
     title: "AUTOMOTIVE",
     category: "COMMERCIAL",
     year: "2024",
-    thumbnail: "",
-    video: "",
+    publicId: "works/automotive_jkl345",
   },
-]
+].map((p) => ({
+  ...p,
+  thumbnail: cldVideoThumb(p.publicId),
+  video: cldVideo(p.publicId),
+}));
 
 export function WorksGallery() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null)
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
     <>
@@ -60,11 +60,13 @@ export function WorksGallery() {
               key={project.id}
               project={project}
               isHovered={hoveredId === project.id}
-              onHoverChange={(hovered: any) => setHoveredId(hovered ? project.id : null)}
+              onHoverChange={(hovered: boolean) =>
+                setHoveredId(hovered ? project.id : null)
+              }
             />
           ))}
         </div>
       </div>
     </>
-  )
+  );
 }

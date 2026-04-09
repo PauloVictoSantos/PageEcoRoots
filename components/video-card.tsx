@@ -45,7 +45,7 @@ export function VideoCard({ project, isHovered, onHoverChange }: VideoCardProps)
       )}
       onMouseEnter={() => onHoverChange(true)}
       onMouseLeave={() => onHoverChange(false)}
-      onClick={() => onHoverChange(!isHovered)} 
+      onClick={() => onHoverChange(!isHovered)}
     >
       {/* Thumbnail Image */}
       <div className={cn("absolute inset-0 transition-opacity duration-700", isHovered ? "opacity-0" : "opacity-100")}>
@@ -67,7 +67,7 @@ export function VideoCard({ project, isHovered, onHoverChange }: VideoCardProps)
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           onLoadedData={() => setIsVideoLoaded(true)}
         >
           <source src={project.video} type="video/mp4" />

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Play, X, Plus } from "lucide-react";
-import type { DriveFile } from "@/lib/drive";
+import type { DriveFile } from "@/lib/timeline";
 
 const VISIBLE_LIMIT = 6;
 
@@ -141,10 +141,9 @@ function FilePreview({ file }: { file: DriveFile }) {
   if (file.kind === "video") {
     return (
       <div className="aspect-video w-full">
-        <iframe
-          src={file.directUrl}
-          allow="autoplay"
-          allowFullScreen
+        <video
+          src={file.url}
+          controls
           className="h-full w-full rounded-lg"
         />
       </div>
@@ -170,7 +169,6 @@ function FilePreview({ file }: { file: DriveFile }) {
 
   if (file.kind === "image") {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
       <img
         src={file.thumbnailUrl}
         alt={file.name}

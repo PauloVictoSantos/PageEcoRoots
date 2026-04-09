@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { TimelineMediaGrid } from "@/components/timeline-media-grid";
-import { fetchWeeks, type WeekData } from "@/lib/drive";
+import { fetchWeeks, type WeekData } from "@/lib/timeline";
 
 const WEEK_DESCRIPTIONS: Record<string, React.ReactNode> = {
   "Semana 1": (
