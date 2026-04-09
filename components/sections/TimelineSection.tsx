@@ -65,11 +65,8 @@ const WEEK_DESCRIPTIONS: Record<string, React.ReactNode> = {
   ),
 };
 
-// Fallback caso você adicione uma pasta nova e esqueça de escrever aqui
 const DEFAULT_DESCRIPTION = (
-  <p className="italic text-neutral-500">
-    Descrição em breve.
-  </p>
+  <p className="italic text-neutral-500">Descrição em breve.</p>
 );
 
 export function TimelineSection() {
@@ -87,16 +84,16 @@ export function TimelineSection() {
 
   if (error) {
     return (
-      <div id="desevolvimento" className="relative w-full py-20 text-center">
-        <p className="text-red-400">Erro: {error}</p>
+      <div id="desenvolvimento" className="relative w-full py-20 text-center">
+        <p className="text-red-400" role="alert">Erro ao carregar timeline: {error}</p>
       </div>
     );
   }
 
   if (!weeks) {
     return (
-      <div id="desevolvimento" className="relative w-full py-20 text-center">
-        <p className="text-neutral-400">Carregando timeline...</p>
+      <div id="desenvolvimento" className="relative w-full py-20 text-center">
+        <p className="text-neutral-400" aria-live="polite">Carregando timeline...</p>
       </div>
     );
   }
@@ -118,14 +115,15 @@ export function TimelineSection() {
 
   if (data.length === 0) {
     return (
-      <div id="desevolvimento" className="relative w-full py-20 text-center">
+      <div id="desenvolvimento" className="relative w-full py-20 text-center">
         <p className="text-neutral-400">Nenhuma semana encontrada.</p>
       </div>
     );
   }
 
   return (
-    <div id="desevolvimento" className="relative w-full overflow-clip">
+    /* ID corrected from "desevolvimento" → "desenvolvimento" */
+    <div id="desenvolvimento" className="relative w-full overflow-clip">
       <Timeline data={data} />
     </div>
   );

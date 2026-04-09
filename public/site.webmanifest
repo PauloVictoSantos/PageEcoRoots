@@ -1,0 +1,18 @@
+{
+  "name": "EcoRoots — Estufa Inteligente Amazônica",
+  "short_name": "EcoRoots",
+  "description": "Monitoramento em tempo real com IA Gemini Vision, ESP32 e gêmeo digital 3D.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0B3D2E",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

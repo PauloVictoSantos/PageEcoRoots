@@ -39,7 +39,6 @@ A arquitetura foi projetada para operar com baixo consumo energético e alta efi
 Integra-se com o sistema de análise de IA para identificação de pragas, doenças foliares e padrões de crescimento.
     `
   },
-
   {
     title: 'Sensores Ambientais (pH, Temp, Umidade)',
     desc: 'Monitoramento preciso das condições da estufa',
@@ -55,7 +54,6 @@ A calibração periódica garante precisão nas medições, essencial para cultu
 Essas variáveis são fundamentais para alimentar modelos preditivos e evitar estresse nas plantas.
     `
   },
-
   {
     title: 'Interface 3D (Gêmeo Digital)',
     desc: 'Simulação virtual da estufa com dados reais',
@@ -71,7 +69,6 @@ Isso permite ao usuário visualizar o estado da plantação de forma intuitiva, 
 O gêmeo digital também serve como base para integração com IA e automação avançada.
     `
   },
-
   {
     title: 'Análise com Inteligência Artificial',
     desc: 'Detecção automática de pragas e doenças',
@@ -87,7 +84,6 @@ Pode ser integrada com APIs como Gemini, OpenAI ou modelos customizados treinado
 O sistema aprende continuamente, melhorando sua precisão ao longo do tempo e permitindo decisões automatizadas.
     `
   },
-
   {
     title: 'Dashboard em Tempo Real',
     desc: 'Visualização e controle dos dados da estufa',
@@ -103,7 +99,6 @@ Permite controle manual e automático dos atuadores, além de fornecer insights 
 Projetado com foco em UX minimalista e alta legibilidade para uso contínuo.
     `
   },
-
   {
     title: 'Sistema de Hidroponia Automatizado',
     desc: 'Irrigação e nutrição inteligente das plantas',
@@ -123,17 +118,21 @@ Garante economia de recursos, crescimento otimizado e redução de intervenção
 
 export default function ComponentsSection() {
   return (
-    <section id="materias" className="py-28">
+    <section id="materias" className="py-28" aria-labelledby="components-heading">
       <div className="container mx-auto px-4">
         <div>
           <motion.span {...fadeUp(0)} className="inline-block text-xs font-semibold tracking-widest text-accent uppercase mb-4">
-            Equipe
+            Hardware &amp; Software
           </motion.span>
 
-          <motion.h2 {...fadeUp(0.1)} className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Matr{' '}
+          <motion.h2
+            {...fadeUp(0.1)}
+            id="components-heading"
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          >
+            Material{' '}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-secondary to-amazon-dark">
-              utilizado
+              Utilizado
             </span>
           </motion.h2>
 
@@ -148,28 +147,31 @@ export default function ComponentsSection() {
             <Dialog key={title}>
               <DialogTrigger asChild>
                 <motion.div {...fadeUp(i * 0.08)}>
-                  <Card className="group relative p-8 rounded-2xl border border-card/6 bg-card/2 overflow-hidden cursor-pointer hover:scale-[1.02] transition-all">
+                  <Card
+                    className="group relative p-8 rounded-2xl border border-card/6 bg-card/2 overflow-hidden cursor-pointer hover:scale-[1.02] transition-all"
+                    role="button"
+                    aria-label={`Ver detalhes: ${title}`}
+                    tabIndex={0}
+                  >
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       style={{
-                        background: `radial-gradient(ellipse at 50% 50%, ${color}10 0%, transparent 70%)`
+                        background: `radial-gradient(ellipse at 50% 50%, ${color}10 0%, transparent 70%)`,
                       }}
+                      aria-hidden="true"
                     />
-
                     <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
                       style={{ backgroundColor: `${color}15` }}
+                      aria-hidden="true"
                     >
-                      <Icon className="w-7 h-7" style={{ color }} />
+                      <Icon className="w-7 h-7" style={{ color }} aria-hidden="true" />
                     </div>
-
                     <CardTitle className="font-bold text-foreground">{title}</CardTitle>
                     <CardDescription className="text-sm text-muted-foreground leading-relaxed">{desc}</CardDescription>
-
-                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">
                       <ArrowRight className="w-4 h-4" style={{ color }} />
                     </div>
-
                   </Card>
                 </motion.div>
               </DialogTrigger>
@@ -177,15 +179,13 @@ export default function ComponentsSection() {
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle className="flex items-center text-2xl gap-2">
-                    <Icon style={{ color }} className="w-24 h-24" />
+                    <Icon style={{ color }} className="w-8 h-8" aria-hidden="true" />
                     {title}
                   </DialogTitle>
-
-                  <DialogDescription className="pt-2 text-sm tracking-wide leading-relaxed">
-                    {details}
+                  <DialogDescription className="pt-2 text-sm tracking-wide leading-relaxed whitespace-pre-line">
+                    {details.trim()}
                   </DialogDescription>
                 </DialogHeader>
-
                 <DialogFooter className="mt-4">
                   <Button className="w-full cursor-pointer">
                     Ver mais detalhes

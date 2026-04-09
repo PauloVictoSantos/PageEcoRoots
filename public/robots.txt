@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block Next.js internal routes from indexing
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap location (update with your real domain)
+Sitemap: https://ecoroots.vercel.app/sitemap.xml
