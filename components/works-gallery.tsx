@@ -10,7 +10,7 @@ const projects = [
     title: "FASHION STUDIO",
     category: "BRANDING",
     year: "2024",
-    thumbnail: "/",
+    thumbnail: "",
     video: "",
   },
   {
@@ -18,16 +18,16 @@ const projects = [
     title: "ARCHITECTURE FIRM",
     category: "DESIGN",
     year: "2024",
-    thumbnail: "/image/Captura de tela 2026-04-05 123949.png",
-    video: "https://drive.google.com/file/d/1tHUjHmBJFGZs7gjV1AEdItRKHx-ti07o/view?usp=drive_link",
+    thumbnail: "",
+    video: "",
   },
   {
     id: 3,
     title: "PRODUCT LAUNCH",
     category: "CREATIVE",
     year: "2024",
-    thumbnail: "/image/Captura de tela 2026-04-05 123359.png",
-    video: "/image/175714-854057973.mp4",
+    thumbnail: "",
+    video: "",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const projects = [
     category: "MARKETING",
     year: "2024",
     thumbnail: "",
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    video: "",
   },
   {
     id: 5,
@@ -54,7 +54,7 @@ export function WorksGallery() {
     <>
       <CustomCursor isActive={hoveredId !== null} />
       <div className="container mx-auto px-6">
-        <div className="flex gap-4 items-stretch">
+        <div className="flex flex-col md:flex-row gap-4">
           {projects.map((project) => (
             <VideoCard
               key={project.id}

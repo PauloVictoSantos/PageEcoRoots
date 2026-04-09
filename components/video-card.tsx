@@ -25,7 +25,7 @@ export function VideoCard({ project, isHovered, onHoverChange }: VideoCardProps)
   useEffect(() => {
     if (isHovered && videoRef.current) {
       videoRef.current.currentTime = 0
-      videoRef.current.play().catch(() => {})
+      videoRef.current.play().catch(() => { })
     } else if (videoRef.current) {
       videoRef.current.pause()
       videoRef.current.currentTime = 0
@@ -35,19 +35,22 @@ export function VideoCard({ project, isHovered, onHoverChange }: VideoCardProps)
   return (
     <div
       className={cn(
-        "group relative rounded-[2.5rem] overflow-hidden",
-        "cursor-none",
-        "transition-all duration-800 ease-in-out",
-        "h-150 min-w-45",
-        isHovered ? "flex-2 shadow-2xl shadow-white/10" : "flex-[0.8] opacity-90",
+        "group relative rounded-4xl overflow-hidden",
+        "cursor-pointer md:cursor-none",
+        "transition-all duration-700 ease-in-out",
+        "w-full md:h-125 aspect-16/10",
+        isHovered
+          ? "md:flex-2 shadow-2xl shadow-white/10"
+          : "md:flex-[0.8] opacity-90",
       )}
       onMouseEnter={() => onHoverChange(true)}
       onMouseLeave={() => onHoverChange(false)}
+      onClick={() => onHoverChange(!isHovered)} 
     >
       {/* Thumbnail Image */}
       <div className={cn("absolute inset-0 transition-opacity duration-700", isHovered ? "opacity-0" : "opacity-100")}>
         <img
-          src={project.thumbnail || "/placeholder.svg"}
+          src={project.thumbnail || "/semimagem.png"}
           alt={project.title}
           className={cn(
             "w-full h-full object-cover transition-all duration-700",

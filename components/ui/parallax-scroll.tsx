@@ -2,13 +2,20 @@
 
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import { CldImage } from "next-cloudinary";
 import { cn } from "@/lib/utils";
+
+type CloudinaryImage = {
+  id: string;
+  width: number;
+  height: number;
+};
 
 export const ParallaxScroll = ({
   images,
   className,
 }: {
-  images: string[];
+  images: CloudinaryImage[];
   className?: string;
 }) => {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -18,93 +25,68 @@ export const ParallaxScroll = ({
     offset: ["start end", "end start"],
   });
 
-  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const translateThird = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const translatefourth = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const slowUp = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const fastUp = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const down = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
-  const third = Math.ceil(images.length / 3);
+  const columns = [[], [], [], [], []] as CloudinaryImage[][];
 
-  const firstPart = images.slice(0, third);
-  const secondPart = images.slice(third, 2 * third);
-  const thirdPart = images.slice(third, 2 * third);
-  const fourthPart = images.slice(2 * third);
+  images.forEach((img, i) => {
+    columns[i % 5].push(img);
+  });
 
   return (
     <section className={cn("w-full", className)} ref={gridRef}>
-      <div
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-start  max-w-7xl mx-auto gap-10 py-40 px-5"
-        ref={gridRef}
-      >
-        <div className="grid gap-10">
-          {firstPart.map((el, idx) => (
-            <motion.div
-              key={"grid-1-" + idx}
-              style={{ y: translateFirst }}
-            >
-              <img
-                src={el}
-                className="h-80 w-full object-cover object-top-left rounded-lg gap-10 m-0! p-0!"
-                height="400"
-                width="400"
-                alt="thumbnail"
-              />
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-7xl mx-auto gap-6 md:gap-10 py-20 md:py-40 px-4 md:px-5">
+        {columns.map((col, colIndex) => {
+          const y =
+            colIndex === 1 || colIndex === 2
+              ? down
+              : colIndex === 0
+                ? slowUp
+                : fastUp;
 
-        <div className="grid gap-10">
-          {secondPart.map((el, idx) => (
-            <motion.div
-              key={"grid-2-" + idx}
-              style={{ y: translateSecond }}
-            >
-              <img
-                src={el}
-                className="h-80 w-full object-cover object-top-left rounded-lg gap-10 m-0! p-0!"
-                height="400"
-                width="400"
-                alt="thumbnail"
-              />
-            </motion.div>
-          ))}
-        </div>
+          return (
+            <div key={colIndex} className="grid gap-6 md:gap-10">
+              {col.map((el, idx) => (
+                <motion.div
+                  key={colIndex + "-" + idx}
+                  style={{ y }}
+                  className="md:block hidden"
+                >
+                  <CldImage
+                    src={el.id}
+                    width={600}
+                    height={600}
+                    crop="fill"
+                    format="auto"
+                    quality="auto"
+                    alt="Galeria estufa"
+                    className="w-full aspect-square object-cover rounded-xl"
+                  />
+                </motion.div>
+              ))}
 
-        {/* COLUNA 3 */}
-        <div className="grid gap-10">
-          {thirdPart.map((el, idx) => (
-            <motion.div
-              key={"grid-3-" + idx}
-              style={{ y: translateThird }}
-            >
-              <img
-                src={el}
-                className="h-80 w-full object-cover object-top-left rounded-lg gap-10 m-0! p-0!"
-                height="400"
-                width="400"
-                alt="thumbnail"
-              />
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="grid gap-10">
-          {fourthPart.map((el, idx) => (
-            <motion.div
-              key={"grid-3-" + idx}
-              style={{ y: translatefourth }}
-            >
-              <img
-                src={el}
-                className="h-80 w-full object-cover object-top-left rounded-lg gap-10 m-0! p-0!"
-                height="400"
-                width="400"
-                alt="thumbnail"
-              />
-            </motion.div>
-          ))}
-        </div>
-
+              {col.map((el, idx) => (
+                <div
+                  key={"mobile-" + colIndex + "-" + idx}
+                  className="block md:hidden"
+                >
+                  <CldImage
+                    src={el.id}
+                    width={600}
+                    height={600}
+                    crop="fill"
+                    format="auto"
+                    quality="auto"
+                    alt="Galeria estufa"
+                    className="w-full aspect-square object-cover rounded-xl"
+                  />
+                </div>
+              ))}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

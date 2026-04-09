@@ -10,41 +10,16 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { LuMoon, LuSun } from "react-icons/lu";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 export function Navigation() {
   const navItems = [
-    {
-      name: "Início",
-      link: "#",
-    },
-    {
-      name: "Sobre ",
-      link: "#about",
-    },
-    {
-      name: "Recursos",
-      link: "#recursos",
-    },
-    {
-      name: "Desevolvimento",
-      link: "#desevolvimento",
-    },
-    {
-      name: "Time",
-      link: "#time",
-    },
-    {
-      name: "Galeria",
-      link: "#galeria",
-    },
-    {
-      name: "Materiais",
-      link: "#materias",
-    },
+    { name: "Início", link: "#inicio" },
+    { name: "Estufa 3D", link: "/estufa" },
+    { name: "Dashboard", link: "/dashboard" },
+    { name: "Blog", link: "#blog" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -59,10 +34,7 @@ export function Navigation() {
           <div className="flex items-center gap-3">
             <NavbarButton
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="
-    rounded-full border border-border
-    hover:bg-primary/10 transition-colors
-  "
+              className="rounded-full border border-border hover:bg-primary/10 transition-colors"
             >
               {theme === "dark" ? (
                 <Sun className="h-4 w-4" />
@@ -70,7 +42,6 @@ export function Navigation() {
                 <Moon className="h-4 w-4" />
               )}
             </NavbarButton>
-
           </div>
         </NavBody>
 
@@ -92,27 +63,28 @@ export function Navigation() {
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
+                className="relative text-neutral-600 dark:text-neutral-300 py-2 text-lg font-medium"
               >
                 <span className="block">{item.name}</span>
               </a>
             ))}
 
-            <div className="flex w-full flex-col gap-4">
+            <div className="flex w-full flex-col gap-4 pt-4 border-t border-border">
               <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setTheme(theme === "dark" ? "light" : "dark");
+                  setIsMobileMenuOpen(false);
+                }}
                 variant="primary"
-                className="w-full"
+                className="w-full flex items-center gap-2 justify-center"
               >
-                <Sun />
+                {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                {theme === "dark" ? "Modo Claro" : "Modo Escuro"}
               </NavbarButton>
             </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-
     </div>
   );
 }
-
-
