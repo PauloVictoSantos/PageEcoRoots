@@ -14,7 +14,7 @@ export type WeekData = {
 };
 
 export async function fetchWeeks(): Promise<WeekData[]> {
-  const res = await fetch("/api/timeline");
+  const res = await fetch("/api/timeline", { cache: "force-cache" });
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
     throw new Error(err.error ?? `HTTP ${res.status}`);

@@ -51,18 +51,18 @@ export function FeaturesSection() {
 
   return (
     <div id="features" className="relative z-20 mx-auto max-w-7xl py-20 lg:py-40">
-       <img
-          src="/image/t.webp"
-          alt=""
-          className="absolute pointer-events-none select-none top-0 rotate-0"
-        />
+      <img
+        src="/image/t.webp"
+        alt=""
+        className="absolute pointer-events-none select-none top-0 rotate-0"
+      />
       <div>
         <motion.span {...fadeUp(0)} className="inline-block text-xs font-semibold tracking-widest text-[#58D68D] uppercase mb-4">
           Projeto
         </motion.span>
         <motion.h2 {...fadeUp(0.1)} className="mb-4 bg-linear-to-r from-foreground via-amazon-dark to-amazon-highlight bg-clip-text text-5xl font-extrabold leading-tight text-transparent sm:text-6xl">
           Como o {' '}
-            Sistema Funciona
+          Sistema Funciona
         </motion.h2>
         <motion.p {...fadeUp(0.2)} className="text-[#9CA3AF] text-lg leading-relaxed mb-8">
           O Smart Greenhouse integra sensores ESP32, visão computacional com Gemini IA
@@ -115,11 +115,19 @@ const SkeletonTerminal = () => {
 };
 
 
-const SkeletonTelemetry = () => {
+const SkeletonTelemetry: any = () => {
   return (
-    <div>
+    <div className="relative">
       <ArchitectureConnector />
-      <div className="pointer-events-none absolute right-0 bottom-40 z-40 h-48 w-6/6 bg-linear-to-t from-background via-background to-transparent dark:from-background dark:via-background" />
+
+      <div className="
+    pointer-events-none 
+    absolute inset-x-0 bottom-0 
+    h-24 md:h-40 
+    z-10 
+    bg-linear-to-t 
+    from-background via-background/80 to-transparent
+  " />
     </div>
   )
 };

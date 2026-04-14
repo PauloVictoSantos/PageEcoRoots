@@ -17,13 +17,20 @@ export async function GET() {
       max_results: 100,
     });
 
-    return NextResponse.json({
-      images: images.resources.map((r: { public_id: string; width: number; height: number }) => ({
-        id: r.public_id,
-        width: r.width,
-        height: r.height,
-      })),
-    });
+    return NextResponse.json(
+      {
+        images: images.resources.map((r: { public_id: string; width: number; height: number }) => ({
+          id: r.public_id,
+          width: r.width,
+          height: r.height,
+        })),
+      },
+      {
+        headers: {
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+        },
+      }
+    );
   } catch (err) {
     console.error("Cloudinary error:", err);
     const message = err instanceof Error ? err.message : "Unknown error";

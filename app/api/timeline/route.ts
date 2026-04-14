@@ -109,7 +109,14 @@ export async function GET() {
 
     weeks.sort((a, b) => a.folder.localeCompare(b.folder, undefined, { numeric: true }));
 
-    return NextResponse.json({ weeks });
+    return NextResponse.json(
+      { weeks },
+      {
+        headers: {
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+        },
+      }
+    );
   } catch (err) {
     console.error("Cloudinary timeline error:", err);
     const message = err instanceof Error ? err.message : "Unknown error";
