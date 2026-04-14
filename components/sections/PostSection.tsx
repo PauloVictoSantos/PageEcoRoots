@@ -6,7 +6,7 @@ import { PostCard } from "@/components/blog/post-card";
 export default function BlogPage() {
   return (
     <section id="blog" aria-labelledby="blog-heading" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none rotate-180" />
+      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none -z-50 md:z-50 rotate-180" />
 
       <div className="mb-16 text-center animate-in fade-in slide-in-from-bottom-4 duration-600">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-(--amazon-dark)/15 bg-(--amazon-dark)/8 px-4 py-1.5 text-[13px] font-semibold tracking-wider text-amazon-dark">

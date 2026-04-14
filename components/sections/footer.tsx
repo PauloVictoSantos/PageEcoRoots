@@ -21,21 +21,21 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" className="w-12 h-12" />
+              <img src="/logo.png" className="w-16 h-16" />
 
-              <span className="font-bold text-2xl text-white">
+              <span className="font-bold text-3xl text-foreground">
                 Eco<span className="text-primary">Roots</span>
               </span>
             </div>
 
-            <p className="text-sm text-neutral-300 max-w-xs leading-relaxed">
+            <p className="text text-foreground max-w-xs leading-relaxed">
               Estufa inteligente com IA, sensores IoT e monitoramento em tempo real.
               Tecnologia inspirada na Amazônia 🌱
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 text-sm">
-            <span className="text-white font-semibold">Navegação</span>
+          <div className="flex flex-col gap-4 text-lg">
+            <span className="text-foreground font-bold">Navegação</span>
 
             {[
               { label: 'Início', href: '#inicio' },
@@ -46,7 +46,7 @@ export function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative w-fit text-neutral-300 hover:text-primary transition"
+                className="relative w-fit text-foreground hover:text-primary transition"
               >
                 {item.label}
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -55,7 +55,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <span className="text-white font-semibold">Conecte-se</span>
+            <span className="text-foreground font-semibold">Conecte-se</span>
 
             <div className="flex gap-4">
 
@@ -74,7 +74,7 @@ export function Footer() {
                 target="_blank"
                 className="p-3 rounded-xl bg-white/5 hover:bg-white/20 transition"
               >
-                <Github className="text-white" size={18} />
+                <Github className="text-foreground" size={18} />
               </a>
 
               {/* LinkedIn */}
@@ -100,7 +100,7 @@ export function Footer() {
 
         <div className="my-12 h-px bg-white/10" />
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-foreground">
           <p>
             ©{new Date().getFullYear()} EcoRoots · Tecnologia Amazônica
           </p>

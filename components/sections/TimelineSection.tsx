@@ -123,7 +123,7 @@ export function TimelineSection() {
 
   return (
     <div id="desenvolvimento" className="relative w-full overflow-clip">
-      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none rotate-36" />
+      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none -z-50 md:z-50 rotate-36" />
       <Timeline data={data} />
     </div>
   );

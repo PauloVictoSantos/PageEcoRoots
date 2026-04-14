@@ -29,7 +29,7 @@ export default function FAQSection() {
 
   return (
     <section id='FAQSection' className="py-28">
-      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none rotate-288" />
+      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none -z-50 md:z-50 rotate-288" />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className='text-center py-10'>
           <motion.span
