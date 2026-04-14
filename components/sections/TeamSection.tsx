@@ -374,7 +374,7 @@ const data = [
 export function TeamSection() {
   const cards = data.map((card, i) => <Card key={card.src} card={card} index={i} />);
   return (
-    <div id="time" className="w-full py-20 lg:py-32">
+    <div id="team" className="w-full py-20 lg:py-32">
       <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none -z-50 md:z-50 rotate-72" />      <div className="container mx-auto px-4 mb-8">
         <motion.span {...fadeUp(0)} className="inline-block text-xs font-semibold tracking-widest text-[#58D68D] uppercase mb-4">
           Desenvolvimento

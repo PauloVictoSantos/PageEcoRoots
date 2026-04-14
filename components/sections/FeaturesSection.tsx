@@ -50,7 +50,7 @@ export function FeaturesSection() {
   ];
 
   return (
-    <div id="recursos" className="relative z-20 mx-auto max-w-7xl py-20 lg:py-40">
+    <div id="features" className="relative z-20 mx-auto max-w-7xl py-20 lg:py-40">
        <img
           src="/image/t.webp"
           alt=""

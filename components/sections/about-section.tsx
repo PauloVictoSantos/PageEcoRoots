@@ -32,7 +32,7 @@ const highlights = [
 
 export function AboutSection() {
   return (
-    <SectionWrapper className="container mx-auto px-4">
+    <SectionWrapper id='about' className="container mx-auto px-4">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <motion.span

@@ -115,14 +115,14 @@ export function TimelineSection() {
 
   if (data.length === 0) {
     return (
-      <div id="desenvolvimento" className="relative w-full py-20 text-center">
+      <div className="relative w-full py-20 text-center">
         <p className="text-neutral-400">Nenhuma semana encontrada.</p>
       </div>
     );
   }
 
   return (
-    <div id="desenvolvimento" className="relative w-full overflow-clip">
+    <div id="timeline" className="relative w-full overflow-clip">
       <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none -z-50 md:z-50 rotate-36" />
       <Timeline data={data} />
     </div>

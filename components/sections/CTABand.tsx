@@ -12,7 +12,7 @@ const fadeUp = (delay = 0) => ({
 
 export default function CTABand() {
   return (
-    <section className="py-24">
+    <section id='cta' className="py-24">
       <div className="container mx-auto px-4">
         <motion.div
           {...fadeUp()}
