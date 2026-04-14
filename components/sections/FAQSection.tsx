@@ -28,7 +28,8 @@ export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="py-28">
+    <section id='FAQSection' className="py-28">
+      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none rotate-288" />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className='text-center py-10'>
           <motion.span
@@ -91,6 +92,7 @@ export default function FAQSection() {
           ))}
         </div>
       </div>
+      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none right-0 rotate-252" />
     </section>
   )
 }

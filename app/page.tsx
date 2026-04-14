@@ -15,7 +15,6 @@ import IndicadorScroll from '@/components/indicadorScroll'
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-      {/* LiveVisitors flutuante no canto superior direito */}
       <div className="fixed bottom-8 right-4 z-50">
         <LiveVisitors />
       </div>

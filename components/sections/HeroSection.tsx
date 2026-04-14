@@ -1,14 +1,15 @@
 'use client'
 
-import { useRef } from 'react'
-import { ArrowRight, Eye } from 'lucide-react'
+import { useRef, useState, useEffect } from 'react'
+import { ArrowRight, Eye, ChevronDown, ChevronUp } from 'lucide-react'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { FloatingLeaves } from '../FloatingLeaves'
 
 export default function HeroSection() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const y       = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
   return (
@@ -18,7 +19,6 @@ export default function HeroSection() {
       aria-label="Seção principal — EcoRoots Estufa Inteligente"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0" aria-hidden="true">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,#145A32_0%,transparent_65%)] opacity-60" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_80%_80%,#0B3D2E_0%,transparent_60%)] opacity-40" />
@@ -30,9 +30,8 @@ export default function HeroSection() {
           }}
         />
       </motion.div>
-
+        <FloatingLeaves />
       <div className="relative z-10 container mx-auto px-4 text-center pt-24">
-        {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -44,7 +43,6 @@ export default function HeroSection() {
           <span className="text-sm text-foreground font-medium">Sistema Ativo · ESP32 Conectado</span>
         </motion.div>
 
-        {/* PAGE H1 — single H1 for the entire home page */}
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,7 +67,6 @@ export default function HeroSection() {
           Tecnologia sustentável inspirada na biodiversidade da Amazônia.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,7 +92,6 @@ export default function HeroSection() {
           </Link>
         </motion.div>
 
-        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

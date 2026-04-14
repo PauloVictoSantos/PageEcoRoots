@@ -237,7 +237,7 @@ export const MobileNavToggle = ({
   );
 };
 export const NavbarLogo = () => (
-  <Link href="/" className="flex items-center gap-2.5 mr-5 group relative z-20">
+  <Link href="/" className="flex items-center mr-5 group relative z-20">
     <motion.div whileHover={{ scale: 1.08, rotate: 5 }} transition={{ type: "spring", stiffness: 400 }}>
       <Image
         src="/logo.png"
@@ -248,7 +248,7 @@ export const NavbarLogo = () => (
       />
     </motion.div>
     <span className="font-bold text-sm tracking-tight text-[#58D68D] group-hover:text-[#58D68D] transition-colors">
-      Eco<span className="text-white">Roots</span>
+      Eco<span className="text-accent-foreground">Roots</span>
     </span>
   </Link>
 );

@@ -29,6 +29,7 @@ export function GallerySection() {
 
   return (
     <div id="galeria" className="relative z-20 mx-auto max-w-7xl py-20 lg:py-40">
+      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none rotate-108" />
       <motion.span {...fadeUp(0)} className="inline-block text-xs font-semibold tracking-widest text-[#58D68D] uppercase mb-4">
         Galeria
       </motion.span>

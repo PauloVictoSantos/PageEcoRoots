@@ -1,31 +1,117 @@
-import Link from 'next/link'
+'use client'
 
-function LeafLogo() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 3C16 3 5 8 5 18C5 23.5 9.5 28 16 28C22.5 28 27 23.5 27 18C27 8 16 3 16 3Z" fill="#1E8449" opacity="0.9"/>
-      <path d="M16 3C16 3 22 10 20 20C18.5 26 16 28 16 28" stroke="#58D68D" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M16 28V14" stroke="#58D68D" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
-  )
-}
+import Link from 'next/link'
+import { TextHoverEffect } from '../ui/text-hover-effect'
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/6">
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <LeafLogo />
-            <span className="font-bold text-white">Smart<span className="text-[#58D68D]">Greenhouse</span></span>
+    <footer className="relative mt-32 overflow-hidden">
+      <img
+        src="/image/Spring_leaves_001v1_02.jpg"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none dark:hidden"
+      />
+
+      <img
+        src="/image/15572806_Spring_leaves_001v1_01-Photoroom.png"
+        className="absolute inset-0 w-full h-full object-cover rotate-180 pointer-events-none select-none hidden dark:block"
+      />
+
+      <div className="relative z-10 container mx-auto px-4 py-20">
+        <div className="grid md:grid-cols-3 gap-12">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" className="w-12 h-12" />
+
+              <span className="font-bold text-2xl text-white">
+                Eco<span className="text-primary">Roots</span>
+              </span>
+            </div>
+
+            <p className="text-sm text-neutral-300 max-w-xs leading-relaxed">
+              Estufa inteligente com IA, sensores IoT e monitoramento em tempo real.
+              Tecnologia inspirada na Amazônia 🌱
+            </p>
           </div>
-          <nav className="flex gap-6 text-sm text-[#6B7280]">
-            <Link href="/"             className="hover:text-[#58D68D] transition-colors">Início</Link>
-            <Link href="/estufa"       className="hover:text-[#58D68D] transition-colors">Estufa 3D</Link>
-            <Link href="/dashboard"    className="hover:text-[#58D68D] transition-colors">Dashboard</Link>
-            <Link href="/documentacao" className="hover:text-[#58D68D] transition-colors">Documentação</Link>
-          </nav>
-          <p className="text-xs text-[#4B5563]">© 2025 Smart Greenhouse · Tecnologia Amazônica</p>
+
+          <div className="flex flex-col gap-4 text-sm">
+            <span className="text-white font-semibold">Navegação</span>
+
+            {[
+              { label: 'Início', href: '#inicio' },
+              { label: 'Sobre', href: '#sobre' },
+              { label: 'Tecnologia', href: '#tecnologia' },
+              { label: 'Contato', href: '#contato' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="relative w-fit text-neutral-300 hover:text-primary transition"
+              >
+                {item.label}
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <span className="text-white font-semibold">Conecte-se</span>
+
+            <div className="flex gap-4">
+
+              {/* Instagram */}
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                className="p-3 rounded-xl bg-white/5 hover:bg-[#E1306C]/20 transition"
+              >
+                <Instagram className="text-[#E1306C]" size={18} />
+              </a>
+
+              {/* GitHub */}
+              <a
+                href="https://github.com"
+                target="_blank"
+                className="p-3 rounded-xl bg-white/5 hover:bg-white/20 transition"
+              >
+                <Github className="text-white" size={18} />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                className="p-3 rounded-xl bg-white/5 hover:bg-[#0A66C2]/20 transition"
+              >
+                <Linkedin className="text-[#0A66C2]" size={18} />
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:seuemail@email.com"
+                className="p-3 rounded-xl bg-white/5 hover:bg-[#EA4335]/20 transition"
+              >
+                <Mail className="text-[#EA4335]" size={18} />
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <div className="my-12 h-px bg-white/10" />
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+          <p>
+            ©{new Date().getFullYear()} EcoRoots · Tecnologia Amazônica
+          </p>
+
+          <p>
+            Desenvolvido por <span className="text-primary">Paulo Victor</span>
+          </p>
+        </div>
+
+        <div className="mt-20 flex items-center justify-center">
+          <TextHoverEffect text="ECOROOTS" />
         </div>
       </div>
     </footer>

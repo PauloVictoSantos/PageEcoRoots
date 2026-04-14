@@ -34,8 +34,6 @@ export function AboutSection() {
   return (
     <SectionWrapper className="container mx-auto px-4">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
-
-        {/* LEFT */}
         <div>
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -117,7 +115,6 @@ export function AboutSection() {
           </motion.div>
         </div>
 
-        {/* RIGHT */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -132,8 +129,6 @@ export function AboutSection() {
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary/20 rounded-full blur-3xl" />
 
             <div className="relative grid grid-cols-2 gap-4">
-
-              {/* MAIN CARD */}
               <Card className="col-span-2 bg-linear-to-br from-primary/90 to-secondary/80 text-center p-6 rounded-2xl">
                 <span className="text-4xl font-bold text-accent-foreground">
                   98%
@@ -171,6 +166,13 @@ export function AboutSection() {
                 </p>
               </Card>
             </div>
+
+            <img
+              src="/image/t (4).webp"
+              alt="planta"
+              className="absolute ml-5"
+              style={{ bottom: "0px", right: "-2px", transform: "rotate(6deg)" }}
+            />
           </Card>
         </motion.div>
       </div>

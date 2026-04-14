@@ -17,7 +17,7 @@
   --muted: #1C1C1C;
   --muted-foreground: #686c72;
   --accent: #58D68D;
-  --c: #0A0A0A;
+  --accent-foreground: #0A0A0A;
   --destructive: #DC2626;
   --destructive-foreground: #EAEAEA;
   --border: rgba(88, 214, 141, 0.15);
@@ -106,6 +106,8 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+
   }
 }
 

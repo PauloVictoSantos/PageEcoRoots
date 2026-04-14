@@ -77,80 +77,80 @@ function TeamImageCards({ members, color }: { members: TeamMember[]; color: stri
 
 const TECH_COLORS: Record<string, string> = {
   // JS / TS ecosystem
-  "Next.js 16":      "#FFFFFF",
-  "Next.js":         "#FFFFFF",
-  "Node.js":         "#68A063",
-  "TypeScript":      "#3178C6",
-  "JavaScript":      "#F7DF1E",
-  "React":           "#61DAFB",
-  "Socket.IO":       "#FFFFFF",
+  "Next.js 16": "#FFFFFF",
+  "Next.js": "#FFFFFF",
+  "Node.js": "#68A063",
+  "TypeScript": "#3178C6",
+  "JavaScript": "#F7DF1E",
+  "React": "#61DAFB",
+  "Socket.IO": "#FFFFFF",
   // Styling / animation
-  "Tailwind":        "#06B6D4",
-  "Framer Motion":   "#BB4B96",
+  "Tailwind": "#06B6D4",
+  "Framer Motion": "#BB4B96",
   // 3D
-  "Three.js":        "#FFFFFF",
-  "R3F":             "#61DAFB",
+  "Three.js": "#FFFFFF",
+  "R3F": "#61DAFB",
   // Python
-  "Python":          "#3776AB",
-  "FastAPI":         "#009688",
-  "Pydantic":        "#E92063",
-  "Prompt Eng.":     "#F59E0B",
+  "Python": "#3776AB",
+  "FastAPI": "#009688",
+  "Pydantic": "#E92063",
+  "Prompt Eng.": "#F59E0B",
   // AI
-  "Gemini Vision":   "#4285F4",
-  "REST API":        "#6DB33F",
+  "Gemini Vision": "#4285F4",
+  "REST API": "#6DB33F",
   // Database
-  "MySQL":           "#4479A1",
-  "Prisma":          "#5A67D8",
-  "SQL":             "#CC2927",
-  "Migrations":      "#6366F1",
+  "MySQL": "#4479A1",
+  "Prisma": "#5A67D8",
+  "SQL": "#CC2927",
+  "Migrations": "#6366F1",
   // IoT / Hardware
-  "ESP32":           "#E7352C",
-  "ESP32-CAM":       "#E7352C",
-  "Arduino":         "#00979D",
-  "DHT22":           "#FF6B35",
-  "C++":             "#00599C",
-  "Circuitos":       "#94A3B8",
-  "PVC Pipes":       "#78909C",
+  "ESP32": "#E7352C",
+  "ESP32-CAM": "#E7352C",
+  "Arduino": "#00979D",
+  "DHT22": "#FF6B35",
+  "C++": "#00599C",
+  "Circuitos": "#94A3B8",
+  "PVC Pipes": "#78909C",
   // Design
-  "Design":          "#FF7262",
+  "Design": "#FF7262",
   // Generic
-  "MLOps":           "#FF9800",
-  "Data Scientist":  "#9C27B0",
-  "DevOps":          "#E44D26",
+  "MLOps": "#FF9800",
+  "Data Scientist": "#9C27B0",
+  "DevOps": "#E44D26",
 };
 
 const TECH_ICONS: Record<string, IconType> = {
-  "Next.js 16":      SiNextdotjs,
-  "Next.js":         SiNextdotjs,
-  "Node.js":         SiNodedotjs,
-  "TypeScript":      SiTypescript,
-  "JavaScript":      SiJavascript,
-  "React":           SiReact,
-  "Socket.IO":       SiSocketdotio,
-  "Tailwind":        SiTailwindcss,
-  "Framer Motion":   SiFramer,
-  "Three.js":        SiThreedotjs,
-  "R3F":             SiThreedotjs,
-  "Python":          SiPython,
-  "FastAPI":         SiFastapi,
-  "Pydantic":        SiPydantic,
-  "Gemini Vision":   LuMessageSquare,
-  "MySQL":           SiMysql,
-  "Prisma":          SiPrisma,
-  "Arduino":         SiArduino,
-  "ESP32":           LuCpu,
-  "ESP32-CAM":       LuCamera,
-  "C++":             LuCpu,
-  "Design":          LuPenTool,
-  "REST API":        LuGlobe,
-  "SQL":             LuDatabase,
-  "Migrations":      LuGitBranch,
-  "PVC Pipes":       LuWrench,
-  "Circuitos":       LuZap,
-  "MLOps":           LuSettings,
-  "Data Scientist":  BarChart2,
-  "DevOps":          LuSettings,
-  "Prompt Eng.":     LuMessageSquare,
+  "Next.js 16": SiNextdotjs,
+  "Next.js": SiNextdotjs,
+  "Node.js": SiNodedotjs,
+  "TypeScript": SiTypescript,
+  "JavaScript": SiJavascript,
+  "React": SiReact,
+  "Socket.IO": SiSocketdotio,
+  "Tailwind": SiTailwindcss,
+  "Framer Motion": SiFramer,
+  "Three.js": SiThreedotjs,
+  "R3F": SiThreedotjs,
+  "Python": SiPython,
+  "FastAPI": SiFastapi,
+  "Pydantic": SiPydantic,
+  "Gemini Vision": LuMessageSquare,
+  "MySQL": SiMysql,
+  "Prisma": SiPrisma,
+  "Arduino": SiArduino,
+  "ESP32": LuCpu,
+  "ESP32-CAM": LuCamera,
+  "C++": LuCpu,
+  "Design": LuPenTool,
+  "REST API": LuGlobe,
+  "SQL": LuDatabase,
+  "Migrations": LuGitBranch,
+  "PVC Pipes": LuWrench,
+  "Circuitos": LuZap,
+  "MLOps": LuSettings,
+  "Data Scientist": BarChart2,
+  "DevOps": LuSettings,
+  "Prompt Eng.": LuMessageSquare,
 };
 
 function MemberDetail({ name, role, skills, bio, color, teamMembers, src }: {
@@ -173,8 +173,8 @@ function MemberDetail({ name, role, skills, bio, color, teamMembers, src }: {
         {/* decorative rings */}
         <svg className="absolute -right-8 -top-8 w-64 h-64 opacity-[0.07]" viewBox="0 0 200 200" fill="none">
           <circle cx="160" cy="60" r="130" stroke={color} strokeWidth="0.6" />
-          <circle cx="160" cy="60" r="90"  stroke={color} strokeWidth="0.6" />
-          <circle cx="160" cy="60" r="50"  stroke={color} strokeWidth="0.6" />
+          <circle cx="160" cy="60" r="90" stroke={color} strokeWidth="0.6" />
+          <circle cx="160" cy="60" r="50" stroke={color} strokeWidth="0.6" />
         </svg>
         {/* dot grid */}
         <svg className="absolute bottom-0 right-0 w-48 h-32 opacity-[0.06]" viewBox="0 0 200 130">
@@ -375,9 +375,8 @@ export function TeamSection() {
   const cards = data.map((card, i) => <Card key={card.src} card={card} index={i} />);
   return (
     <div id="time" className="w-full py-20 lg:py-32">
+      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none rotate-72" />
       <div className="container mx-auto px-4 mb-8">
-        <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-          className="text-xs font-semibold tracking-widest text-[#58D68D] uppercase">Equipe</motion.span>
         <motion.span {...fadeUp(0)} className="inline-block text-xs font-semibold tracking-widest text-[#58D68D] uppercase mb-4">
           Desenvolvimento
         </motion.span>

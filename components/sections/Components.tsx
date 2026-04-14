@@ -119,6 +119,7 @@ Garante economia de recursos, crescimento otimizado e redução de intervenção
 export default function ComponentsSection() {
   return (
     <section id="materias" className="py-28" aria-labelledby="components-heading">
+      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none  rotate-144" />
       <div className="container mx-auto px-4">
         <div>
           <motion.span {...fadeUp(0)} className="inline-block text-xs font-semibold tracking-widest text-accent uppercase mb-4">

@@ -122,8 +122,8 @@ export function TimelineSection() {
   }
 
   return (
-    /* ID corrected from "desevolvimento" → "desenvolvimento" */
     <div id="desenvolvimento" className="relative w-full overflow-clip">
+      <img src="/image/t.webp" alt="" className="absolute pointer-events-none select-none rotate-36" />
       <Timeline data={data} />
     </div>
   );

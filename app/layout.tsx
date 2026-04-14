@@ -8,7 +8,7 @@ import { Footer } from '@/components/sections/footer'
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://ecoroots.vercel.app'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://ecoroots-ai.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -93,7 +93,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <head>
-        {/* Resource hints — load CDN assets faster */}
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://images.unsplash.com" />
@@ -101,7 +100,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Structured Data — WebApplication */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -130,7 +128,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          {/* Semantic landmark: skip-nav for accessibility */}
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
