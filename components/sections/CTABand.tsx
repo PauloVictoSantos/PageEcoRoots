@@ -38,14 +38,14 @@ export default function CTABand() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/estufa"
+                href="/modelo3d"
                 className="px-8 py-4 rounded-2xl bg-linear-to-r from-[#1E8449] to-[#145A32] hover:from-[#58D68D] hover:to-[#1E8449] text-white font-semibold transition-all duration-300 shadow-xl shadow-[#1E8449]/30"
               >
                 Ver Estufa 3D
               </Link>
 
               <Link
-                href="/dashboard"
+                href="https://eco-roots-dashboard.vercel.app/"
                 className="px-8 py-4 rounded-2xl border border-[#58D68D]/25 hover:bg-[#58D68D]/8 text-white font-semibold transition-all"
               >
                 Abrir Dashboard

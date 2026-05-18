@@ -63,7 +63,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.45 }}
           className="text-lg md:text-xl text-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          Monitoramento em tempo real com IA Gemini Vision, sensores IoT e gêmeo digital 3D.
+          Monitoramento em tempo real com visão computacional, sensores.
           Tecnologia sustentável inspirada na biodiversidade da Amazônia.
         </motion.p>
 
@@ -83,7 +83,7 @@ export default function HeroSection() {
             <ArrowRight className="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
           <Link
-            href="/dashboard"
+            href="https://eco-roots-dashboard.vercel.app/"
             aria-label="Abrir o dashboard de monitoramento em tempo real"
             className="flex items-center gap-2 px-8 py-4 rounded-2xl border border-border hover:bg-white/5 text-foreground font-semibold text-base transition-all duration-300 hover:-translate-y-0.5"
           >

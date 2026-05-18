@@ -17,8 +17,8 @@ import { Moon, Sun } from "lucide-react";
 export function Navigation() {
   const navItems = [
     { name: "Início", link: "#inicio" },
-    { name: "Estufa 3D", link: "/estufa" },
-    { name: "Dashboard", link: "/dashboard" },
+    { name: "Estufa 3D", link: "/modelo3d" },
+    { name: "Dashboard", link: "https://eco-roots-dashboard.vercel.app/" },
     { name: "Blog", link: "#blog" },
   ];
 

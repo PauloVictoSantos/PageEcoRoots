@@ -27,7 +27,7 @@ export default function Home() {
       <TimelineSection />
       <TeamSection />
       <GallerySection />
-      <ComponentsSection />
+      <ComponentsSection /> 
       <BlogPage />
       <WorkSegtion />
       <FAQSection />

@@ -73,9 +73,8 @@ export function Footer() {
 
               <div className="flex flex-col gap-3">
                 {[
-                  { label: '🌱 Estufa Inteligente', href: 'https://sua-estufa.com' },
-                  { label: '📚 Documentação', href: 'https://docs.seuprojeto.com' },
-                  { label: '📊 Dashboard', href: 'https://dashboard.seuprojeto.com' },
+                  { label: '🌱 Estufa Inteligente', href: '/modelo3d' },
+                  { label: '📊 Dashboard', href: 'https://eco-roots-dashboard.vercel.app/' },
                 ].map((item) => (
                   <a
                     key={item.href}

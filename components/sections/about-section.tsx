@@ -107,7 +107,7 @@ export function AboutSection() {
               asChild
               className="rounded-xl px-6 py-3 text-sm font-medium"
             >
-              <Link href="/dashboard/estufa">
+              <Link href="/modelo3d">
                 Veja a Estufa
                 <LuArrowRight className="w-4 h-4 ml-2" />
               </Link>
